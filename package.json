@@ -1,0 +1,10 @@
+{
+  "name": "parm-cli",
+  "version": "0.0.1",
+  "type": "module",
+  "bin": { "parm": "src/cli.ts" },
+  "scripts": {
+    "start": "bun run src/cli.ts",
+    "build": "bun build --compile src/cli.ts --outfile dist/parm"
+  }
+}
