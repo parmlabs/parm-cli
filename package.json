@@ -1,10 +1,29 @@
 {
   "name": "parm-cli",
   "version": "0.0.1",
+  "description": "Interactive CLI to simulate OpenQASM files",
   "type": "module",
-  "bin": { "parm": "src/cli.ts" },
+  "license": "MIT",
+  "keywords": ["quantum", "openqasm", "qasm", "simulator", "cli"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parmlabs/parm-cli.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "parm": "dist/parm.js"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
   "scripts": {
     "start": "bun run src/cli.ts",
-    "build": "bun build --compile src/cli.ts --outfile dist/parm"
+    "build": "bun build src/cli.ts --target node --outfile dist/parm.js --banner '#!/usr/bin/env node'",
+    "build:binary": "bun build --compile src/cli.ts --outfile dist/parm",
+    "prepublishOnly": "bun run build"
+  },
+  "devDependencies": {
+    "@clack/prompts": "^1.9.0",
+    "@hviana/js-quantum": "npm:@jsr/hviana__js-quantum"
   }
 }

@@ -1,4 +1,3 @@
-#!/usr/bin/env bun
 import { parseArgs } from "node:util";
 import { basename } from "node:path";
 import {
@@ -21,7 +20,7 @@ import {
   summarize,
 } from "./core.ts";
 
-const VERSION = "0.1.0";
+const VERSION = "0.0.1";
 
 const HELP = `parm-cli - simulate OpenQASM files
 
